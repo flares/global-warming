@@ -6,8 +6,7 @@ gem 'rails', '3.0.9'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem "bcrypt-ruby", :require => "bcrypt"
 gem 'sqlite3'
-gem 'omniauth'
-gem 'omniauth-google'
+
 # Use unicorn as the web server
 # gem 'unicorn'
 
