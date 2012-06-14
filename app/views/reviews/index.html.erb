@@ -3,7 +3,8 @@
 <div class="content">
 <% @reviews.each do |review| %>
 <div class="posts">
-		<div class="controls">
+
+	<div class="controls">
 	<% if session[:user_name] == review.creator || session[:user_name] == "admin"  %>
 	<p><%= link_to "Edit" ,edit_review_path(review) %>
 	<%= link_to "Delete" ,review , :confirm => "Are you Sure?",:method=>:delete %>
@@ -11,6 +12,24 @@
 	<% end %>
 	</div>
 	<h3> <%= link_to review.title, review %></h3>
+
+	$number=1
+
+	<%= number %>
+	<!-- Place this tag where you want the +1 button to render -->
+<g:plusone annotation="inline" href="http://global-warming.heroku.com/reviews/1"></g:plusone>
+
+<!-- Place this render call where appropriate -->
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+
+
+
 	<small>By <%= review.creator %></small>
 	<p><%= review.content %></p>
 
