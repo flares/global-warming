@@ -1,13 +1,10 @@
-<h2><%= @review.title %> </h2>
 
+<h2 id="title"><%= @review.title %> 
 
+<% $myurl= "http://global-warming.heroku.com/reviews/"+@review.id.to_s %>
 
-
-
-<% $myurl= "http://global-warming.heroku.com/reviews/"+review.id.to_s %>
-<%= $myurl %>
 <!-- Place this tag where you want the +1 button to render -->
-<g:plusone annotation="inline" href= <%= $myurl %> ></g:plusone>
+<g:plusone annotation="inline" href= <%= $myurl %> id="g+but" ></g:plusone>
 
 <!-- Place this render call where appropriate -->
 <script type="text/javascript">
@@ -17,12 +14,15 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
+</h2>
 
 
-
-
+<div class="content">
 <p> <%= @review.content %> </p>
 <small> <%= @review.created_at %></small>
 <p></p>
 <br />
+
+</div>
+
 <%= link_to "Home",reviews_path %>
