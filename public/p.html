@@ -35,7 +35,15 @@
           }
           a=url.length;
                     document.getElementById("newframe").src=url;
-          document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
+       //   document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
+
+            var newText = document.createTextNode("<a href=\""+url+"\">"+url+"<\a>");
+
+            var para = document.getElementById("thisurl");
+
+            para.appendChild(newText);
+
+
         }
         </script>
       </head>
