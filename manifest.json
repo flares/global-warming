@@ -1,0 +1,21 @@
+{
+  "name": "Global Warming Blog",
+  "description": "A blog on Gloval Warming",
+  "version": "1",
+  "app": {
+    "urls": [
+      "*://mail.google.com/mail/",
+      "*://www.google.com/mail/"
+    ],
+    "launch": {
+      "web_url": "http://global-warming.heroku.com"
+    }
+  },
+  "icons": {
+    "128": "glob.png"
+  },
+  "permissions": [
+    "unlimitedStorage",
+    "notifications"
+  ]
+}
