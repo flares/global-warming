@@ -33,15 +33,17 @@
             var doc = data[google.picker.Response.DOCUMENTS][0];
             url = doc[google.picker.Document.URL];
           }
-          var message = 'You picked: ' + url;
-          document.getElementById('result').innerHTML = message;
+          document.getElementById("newframe").src="http://docs.google.com/gview?url="+url+"&embedded=true"
         }
         </script>
       </head>
       <body>
         <div id="result">
           <button onclick="createPicker()">Upload Files </button>
-          <iframe></iframe>
+         <script>
+
+         </script>
+<iframe id="newframe" src="http://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
         </div>
       </body>
     </html>
