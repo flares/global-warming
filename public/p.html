@@ -33,6 +33,8 @@
             var doc = data[google.picker.Response.DOCUMENTS][0];
             url = doc[google.picker.Document.URL];
           }
+          a=url.length;
+          url=url.substr(0,a-4);
           document.getElementById("newframe").src="http://docs.google.com/gview?url="+url+"&embedded=true"
           document.getElementById("thisurl").innerHTML=url;
         }
