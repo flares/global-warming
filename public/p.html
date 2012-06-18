@@ -34,6 +34,7 @@
             url = doc[google.picker.Document.URL];
           }
           document.getElementById("newframe").src="http://docs.google.com/gview?url="+url+"&embedded=true"
+          document.getElementById("thisurl").innerhtml=url;
         }
         </script>
       </head>
@@ -45,5 +46,6 @@
          </script>
 <iframe id="newframe" src="http://docs.google.com/gview?url=http://infolab.stanford.edu/pub/papers/google.pdf&embedded=true" style="width:600px; height:500px;" frameborder="0"></iframe>
         </div>
+        <p id="thisurl"></p>
       </body>
     </html>
