@@ -34,11 +34,11 @@
             url = doc[google.picker.Document.URL];
             id=doc[google.picker.Document.ID];
           }
-          a=url.length;
+          a="https://docs.google.com/open?id="+id;
                     document.getElementById("newframe").src="https://docs.google.com/open?id="+id;
        //   document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
 
-            var newText = document.createTextNode(id);
+            var newText = document.createTextNode(id+"<br />"+a+"<br />"+"<br />");
 
             var para = document.getElementById("thisurl");
 
