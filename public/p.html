@@ -38,10 +38,11 @@
                     document.getElementById("newframe").src=a;
        //   document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
 
-            var newText = document.createNode(id+"<br />"+a+"<br />"+"<br />");
+            var newnode = document.createElement('p');
+            newnode.InnerHTML=id+"<br /><a href=\""+a+"\">go here</a><br />"+"<br />");
 
             var para = document.getElementById("thisurl");
-            para.appendChild(newText);
+            para.appendChild(newnode);
 
 
         }
