@@ -27,16 +27,22 @@
         function pickerCallback(data) {
           
 
-
+          var id='';
           var url = 'nothing';
           if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
             var doc = data[google.picker.Response.DOCUMENTS][0];
             url = doc[google.picker.Document.URL];
             id=doc[google.picker.Document.ID];
           }
-         
-          document.getElementById("newframe").src=url;
-       
+          var a="https://docs.google.com/open?id="+id;
+
+          document.getElementById("newframe").src=a;
+    
+          var newnode = document.createElement('p');
+          newnode.InnerHTML=id+"<br /><a href=\""+a+"\">go here</a><br />"+"<br />");
+
+          var para = document.getElementById("thisurl");
+          para.appendChild(newnode);
 
         }
         </script>
