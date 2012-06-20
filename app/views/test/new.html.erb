@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+      <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+        <title>Google Picker Example</title>
+
+        <!-- The standard Google Loader script. -->
+        <script src="http://www.google.com/jsapi?key=AIzaSyCsjonMLAcj8gSXchi1oZkLFoc9JN4IbeI"></script>
+        <script type="text/javascript">
+
+        // Use the Google Loader script to load the google.picker script.
+        // google.setOnLoadCallback(createPicker);
+        google.load('picker', '1');
+
+        // Create and render a Picker object for searching images.
+        function createPicker() {
+            var picker = new google.picker.PickerBuilder().
+                addView(google.picker.ViewId.DOCS).
+                setCallback(pickerCallback).
+                build();
+            picker.setVisible(true);
+          
+        
+        }
+  // A simple callback implementation.
+        function pickerCallback(data) {
+          
+
+          var id='';
+          var name=''
+          var url = 'nothing';
+          if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
+            var doc = data[google.picker.Response.DOCUMENTS][0];
+            url = doc[google.picker.Document.URL];
+            id=doc[google.picker.Document.ID];
+            name=doc[google.picker.Document.NAME];
+          }
+          var a="https://docs.google.com/open?id="+id;
+
+         
+    
+          var newnode = document.createElement('p');
+          newnode.innerHTML=a+"<br /><a href=\""+a+"\">go here</a><br />"+"<br />";
+
+          var para = document.getElementById("thisurl");
+          para.appendChild(newnode);
+
+        }
+        </script>
+      </head>
+      <body>
+        <div id="result" style="align:top;">
+          <button onclick="createPicker()">Upload Files </button>
+         <script>
+
+         </script>
+
+        </div>
+        <p id="thisurl"></p>
+
+	<%= form_for @googli,:as=>:googli,:url=>{:action=>"create",:controller=>"test"} do |f| %>
+	<p>
+	<%= f.label :name %> <br />
+	<%= f.text_field :name %> 
+	</p>
+	<p>
+	<%= f.label :link %> <br />
+	<%= f.text_field :link	%> 
+	</p>
+	<p>
+	<%= f.submit "Add a new review " %>
+	<% end %>
+      </body>
+    </html>
