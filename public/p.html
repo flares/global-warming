@@ -35,13 +35,12 @@
             id=doc[google.picker.Document.ID];
           }
           a="https://docs.google.com/open?id="+id;
-                    document.getElementById("newframe").src="https://docs.google.com/open?id="+id;
+                    document.getElementById("newframe").src=a;
        //   document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
 
-            var newText = document.createTextNode(id+"<br />"+a+"<br />"+"<br />");
+            var newText = document.createNode(id+"<br />"+a+"<br />"+"<br />");
 
             var para = document.getElementById("thisurl");
-
             para.appendChild(newText);
 
 
