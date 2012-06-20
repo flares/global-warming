@@ -14,6 +14,7 @@
 
         // Create and render a Picker object for searching images.
         function createPicker() {
+          alert("hello");
             var picker = new google.picker.PickerBuilder().
                 addView(google.picker.ViewId.DOCS).
                 setCallback(pickerCallback).
@@ -32,7 +33,7 @@
           if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
             var doc = data[google.picker.Response.DOCUMENTS][0];
             url = doc[google.picker.Document.URL];
-            id=doc[google.picker.Document.ID];
+            id = doc[google.picker.Document.ID];
           }
           a="https://docs.google.com/open?id="+id;
                     document.getElementById("newframe").src=a;
