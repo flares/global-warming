@@ -6,6 +6,7 @@ class TestController < ApplicationController
 
   def new
   	@googli = Googlinks.new
+  	@url="sukesh"
   end
 
   def create

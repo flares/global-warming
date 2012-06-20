@@ -44,6 +44,9 @@
 
           var para = document.getElementById("thisurl");
           para.appendChild(newnode);
+          document.getElementById("googli_name").value=name;
+          document.getElementById("googli_link").value=url;
+
       	}
 
         }
@@ -60,13 +63,12 @@
         <p id="thisurl"></p>
 
 	<%= form_for @googli,:as=>:googli,:url=>{:action=>"create",:controller=>"test"} do |f| %>
-	<p>
-	<%= f.label :name %> <br />
-	<%= f.text_field :name %> 
+<p>
+	<%= f.hidden_field :name %> 
 	</p>
 	<p>
-	<%= f.label :link %> <br />
-	<%= f.text_field :link	%> 
+	
+	<%= f.hidden_field :link	%> 
 	</p>
 	<p>
 	<%= f.submit "Share this file " %>
