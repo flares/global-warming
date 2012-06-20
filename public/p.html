@@ -32,18 +32,17 @@
           if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
             var doc = data[google.picker.Response.DOCUMENTS][0];
             url = doc[google.picker.Document.URL];
-            id=doc[google.picker.Document.ID];
+            var id=doc[google.picker.Document.ID];
           }
-          a=url.length;
-                    document.getElementById("newframe").src=url;
-       //   document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
+         
+          var a="https://docs.google.com/open?id="+id;
+          document.getElementById("newframe").src=a;
+     
+          var newnode = document.createElement('p');
+          newnode.InnerHTML=id+"<br /><a href=\""+a+"\">go here</a><br />"+"<br />");
 
-            var newText = document.createTextNode("<a href=\""+url+"\">"+url+"<\a>"+id);
-
-            var para = document.getElementById("thisurl");
-
-            para.appendChild(newText);
-
+          var para = document.getElementById("thisurl");
+          para.appendChild(newnode);
 
         }
         </script>
