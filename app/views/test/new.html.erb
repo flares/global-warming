@@ -31,7 +31,7 @@
           var name='';
           if (data[google.picker.Response.ACTION] == google.picker.Action.PICKED) {
             var doc = data[google.picker.Response.DOCUMENTS][0];
-            url = doc[google.picker.Document.URL];
+            url = doc[google.picker.Document.EMBEDDABLE_URL];
             id=doc[google.picker.Document.ID];
             name=doc[google.picker.Document.NAME];
           
@@ -40,7 +40,7 @@
          
     
           var newnode = document.createElement('p');
-          newnode.innerHTML=name+"<br />"+a+"<br /><a href=\""+a+"\">go here</a><br />"+"<br />";
+          newnode.innerHTML=name+"<br />"+url+"<br /><a href=\""+a+"\">go here</a><br />"+"<br />";
 
           var para = document.getElementById("thisurl");
           para.appendChild(newnode);
