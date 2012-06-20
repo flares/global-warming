@@ -35,10 +35,10 @@
             id=doc[google.picker.Document.ID];
           }
           a=url.length;
-                    document.getElementById("newframe").src=url;
+                    document.getElementById("newframe").src="https://docs.google.com/open?id="+id;
        //   document.getElementById("thisurl").innerHTML="<a href=\""+url+"\">"+url+"<\a>";
 
-            var newText = document.createTextNode("<a href=\""+url+"\">"+url+"<\a>"+id);
+            var newText = document.createTextNode(id);
 
             var para = document.getElementById("thisurl");
 
